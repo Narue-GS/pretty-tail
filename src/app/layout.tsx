@@ -1,6 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 
+import { TipsContext, TipsProvider } from '@/hooks/useTips'
+import { ThemeProvider } from '@/hooks/useTheme'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -15,7 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ThemeProvider>
+          <TipsProvider>
+            {children}
+          </TipsProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
