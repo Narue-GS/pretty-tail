@@ -5,10 +5,7 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <TipsList/>
-      <footer>
-
-      </footer>
+     
     </>
   )
 }

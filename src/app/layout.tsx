@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import StyledComponentsRegistry from "@/lib/registry"
 import { TipsContext, TipsProvider } from '@/hooks/useTips'
 import { ThemeProvider } from '@/hooks/useTheme'
 
@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <TipsProvider>
-            {children}
+            <StyledComponentsRegistry>
+              {children}
+            </StyledComponentsRegistry>
           </TipsProvider>
         </ThemeProvider>
       </body>
